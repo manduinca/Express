@@ -36,4 +36,16 @@ app.get('/friends', function(req, res) {
     res.json(usuarios);
 });
 
+app.get('/datos', function(req, res) {
+    var randomPast = faker.date.past();
+    var randomFuture = faker.date.future();
+    var randomBetween = faker.date.between();
+    var datos = {
+        pasado: randomPast,
+        futuro: randomFuture,
+        entre: randomBetween,
+    }
+    res.json(datos);
+});
+
 app.listen(3000);
